@@ -103,7 +103,7 @@ public class OrderService implements CommandService {
     public boolean execute(Message message, Command command, SendMessageMethod messageMethod)
             throws WrongInputException {
         if (botContextHolder.getLogin(message.getFrom().getId()) == null) {
-            throw new WrongInputException("Аккаунт для работы не выбран. Вым можете посмотреть ваши аккаунты" +
+            throw new WrongInputException("Аккаунт для работы не выбран. Вы можете посмотреть ваши аккаунты" +
                     " при помощи команды /accounts и выбрать при помощи /login");
         }
         Client client = clientRepository.findByCreatorAndNumber(

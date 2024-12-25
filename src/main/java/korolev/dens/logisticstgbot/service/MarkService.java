@@ -64,7 +64,7 @@ public class MarkService implements CommandService {
     public boolean execute(Message message, Command command, SendMessageMethod messageMethod) throws WrongInputException {
         Integer selectedProfile = botContextHolder.getLogin(message.getFrom().getId());
         if (selectedProfile == null) {
-            throw new WrongInputException("Аккаунт для работы не выбран. Вым можете посмотреть ваши аккаунты" +
+            throw new WrongInputException("Аккаунт для работы не выбран. Вы можете посмотреть ваши аккаунты" +
                     " при помощи команды /accounts и выбрать при помощи /login");
         } else {
             Client client = clientRepository.findByCreatorAndNumber(

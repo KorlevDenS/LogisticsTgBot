@@ -28,7 +28,7 @@ public class OrdersService implements CommandService {
     public boolean execute(Message message, Command command, SendMessageMethod messageMethod) throws WrongInputException {
         Integer selectedProfile = botContextHolder.getLogin(message.getFrom().getId());
         if (selectedProfile == null) {
-            messageMethod.sendMessage("Аккаунт для работы не выбран. Вым можете посмотреть ваши аккаунты" +
+            messageMethod.sendMessage("Аккаунт для работы не выбран. Вы можете посмотреть ваши аккаунты" +
                     " при помощи команды /accounts и выбрать при помощи /login", message.getChatId());
         } else {
             Client client = clientRepository.findByCreatorAndNumber(
